@@ -88,6 +88,14 @@ struct cpu_data {
 	bool cctoggle;
 };
 
+int gswitch;
+#ifdef CONFIG_AiO_HotPlug
+extern int AiO_HotPlug;
+#endif
+#ifdef CONFIG_ALUCARD_HOTPLUG
+extern int alucard;
+#endif
+
 static DEFINE_PER_CPU(struct cpu_data, cpu_state);
 static DEFINE_SPINLOCK(state_lock);
 static DEFINE_SPINLOCK(pending_lru_lock);
